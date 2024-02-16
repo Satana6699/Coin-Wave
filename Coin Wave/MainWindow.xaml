@@ -1,0 +1,21 @@
+﻿<Window x:Class="EditedTriangle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EditedTriangle"
+        xmlns:opentk="clr-namespace:OpenTK;assembly=OpenTK.GLControl"
+        mc:Ignorable="d"
+        Title="Triangle" Height="256" Width="290">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Right">
+                <Button x:Name="buttonSetBGColor" Content="Set BG Color" Margin="5" Click="buttonSetBGColor_Click"></Button>
+                <Button x:Name="buttonSetTRColor" Content="Set TR Color" Margin="5" Click="buttonSetTRColor_Click"></Button>
+            </StackPanel>
+            <WindowsFormsHost Margin="5">
+                <opentk:GLControl x:Name="glControl" Load="glControl_Load" Paint="glControl_Paint" />
+            </WindowsFormsHost>
+        </DockPanel>
+    </Grid>
+</Window>
