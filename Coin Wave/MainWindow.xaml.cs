@@ -76,7 +76,7 @@ namespace EditedTriangle
             int vbo;
             GL.GenBuffers(1, out vbo);
 
-            // Get an array size in bytes
+            // Получаем размер массива в байтах
             GL.BindBuffer(BufferTarget.ArrayBuffer, vbo);
             int sizeInBytes = vertices.Length * sizeof(float);
             // Send the vertex array to a video card memory
