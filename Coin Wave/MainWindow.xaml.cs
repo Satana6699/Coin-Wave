@@ -35,10 +35,10 @@ namespace EditedTriangle
                 return;
             }
 
-            // Set a triangle color
+            // Установите цвет треугольника
             GL.Uniform3(_uColorLocation, 0.945f, 0.745f, 0.356f);
 
-            // Set a color for clearing the glCotrol
+            // Установите цвет для очистки glCotrol
             GL.ClearColor(new Color4(0.286f, 0.576f, 0.243f, 1f));
         }
 
@@ -79,9 +79,9 @@ namespace EditedTriangle
             // Получаем размер массива в байтах
             GL.BindBuffer(BufferTarget.ArrayBuffer, vbo);
             int sizeInBytes = vertices.Length * sizeof(float);
-            // Send the vertex array to a video card memory
+            // Отправьте массив вершин в память видеокарты
             GL.BufferData(BufferTarget.ArrayBuffer, sizeInBytes, vertices, BufferUsageHint.StaticDraw);
-            // Config the aPosition variable
+            // Сконфигурируйте переменную aPosition
             GL.VertexAttribPointer(0, 2, VertexAttribPointerType.Float, false, 0, 0);
             GL.EnableVertexAttribArray(0);
 
@@ -110,11 +110,11 @@ namespace EditedTriangle
                 "    fragColor = vec4(uColor, 1.0);" +
                 "}";
 
-            // Vertex Shader
+            // Вершинный шейдер
             int vShader = GL.CreateShader(ShaderType.VertexShader);
             GL.ShaderSource(vShader, vertexShaderSource);
             GL.CompileShader(vShader);
-            // Check compilation
+            // Проверьте компиляцию
             int ok;
             GL.GetShader(vShader, ShaderParameter.CompileStatus, out ok);
             if (ok == 0)
@@ -124,7 +124,7 @@ namespace EditedTriangle
                 return -1;
             }
 
-            // Fragment Shader
+            // Фрагментный шейдер
             int fShader = GL.CreateShader(ShaderType.FragmentShader);
             GL.ShaderSource(fShader, fragmentShaderSource);
             GL.CompileShader(fShader);
